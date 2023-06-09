@@ -127,7 +127,7 @@ public class PongGame extends JPanel implements ActionListener, KeyListener {
      **/
 
 
-    private String diff = "e";
+    private int diff = 0;
 
 
 
@@ -138,7 +138,7 @@ public class PongGame extends JPanel implements ActionListener, KeyListener {
      *
      **/
 
-    public PongGame(String diff) throws FileNotFoundException {
+    public PongGame(int diff) throws FileNotFoundException {
         setSize(WIDTH, HEIGHT);
         this.diff = diff;
 
@@ -196,7 +196,7 @@ public class PongGame extends JPanel implements ActionListener, KeyListener {
 
             }
 
-            if (this.diff.contains("h")){
+            if (this.diff == 1){
                 if (this.bX == 600 && this.bY > OY-10 && this.bY < OY + HEIGHT/17+10){
                     this.bSX *= -1;}}
 
@@ -232,7 +232,7 @@ public class PongGame extends JPanel implements ActionListener, KeyListener {
         g.fillRect(this.p2X, this.p2Y, WIDTH/100, HEIGHT/17);
         g.fillRect(this.bX, this.bY, WIDTH/100, HEIGHT/100);
 
-        if (this.diff.contains("h")){
+        if (this.diff == 1){
             g.setColor(Color.YELLOW);
             g.fillRect(OX, OY, WIDTH/100, HEIGHT/17);}
 
