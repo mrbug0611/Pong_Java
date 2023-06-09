@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.io.FileNotFoundException;
+import java.util.*;
 
 /**
  * creates the window for the pong game.
@@ -17,9 +18,12 @@ public class Pong{
      *
      **/
     public static void main(String[] args) throws FileNotFoundException {
+        Random rand = new Random();
+        
+
         int height = 1000;
         int width = 1000;
-        String diff = args[0];
+        int diff = rand.nextInt(2);
 
         JFrame frame = new JFrame("Pong");
         frame.setSize(width, height);
